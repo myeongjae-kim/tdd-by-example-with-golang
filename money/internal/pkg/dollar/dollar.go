@@ -1,4 +1,4 @@
-package money
+package dollar
 
 // Dollar is a struct indicating the curreny dollar.
 type Dollar struct {

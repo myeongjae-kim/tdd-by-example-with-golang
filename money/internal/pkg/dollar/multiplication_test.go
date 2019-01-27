@@ -1,4 +1,4 @@
-package money
+package dollar
 
 import "testing"
 
