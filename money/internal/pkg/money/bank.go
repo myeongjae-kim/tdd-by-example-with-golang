@@ -4,7 +4,7 @@ package money
 type Bank struct{}
 
 func (b Bank) reduce(source Expression, to string) Money {
-	return newMoney(10, to)
+	return source.reduce(to)
 }
 
 // NewBank constructs an object of Bank
