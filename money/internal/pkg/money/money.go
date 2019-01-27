@@ -32,12 +32,12 @@ func (m Money) Currency() string {
 }
 
 // Times :)
-func (m Money) Times(multiplier int) Money {
+func (m Money) Times(multiplier int) Expression {
 	return newMoney(m.amount*multiplier, m.currency)
 }
 
 // Plus :)
-func (m Money) Plus(addend Money) Expression {
+func (m Money) Plus(addend Expression) Expression {
 	return NewSum(m, addend)
 }
 
