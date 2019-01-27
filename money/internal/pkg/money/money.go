@@ -6,8 +6,8 @@ type Money struct {
 	currency string
 }
 
-// NewMoney constructs a Money object
-func NewMoney(amount int, currency string) Money {
+// newMoney constructs a Money object
+func newMoney(amount int, currency string) Money {
 	return Money{amount, currency}
 }
 
@@ -16,7 +16,22 @@ func (m Money) GetAmount() int {
 	return m.amount
 }
 
-// Currency :)
+// Currency returns a string of currency
 func (m Money) Currency() string {
 	return m.currency
+}
+
+// Times :)
+func (m Money) Times(multiplier int) Money {
+	return newMoney(m.GetAmount()*multiplier, m.Currency())
+}
+
+// Dollar :)
+func Dollar(amount int) Money {
+	return newMoney(amount, "USD")
+}
+
+// Franc :)
+func Franc(amount int) Money {
+	return newMoney(amount, "CHF")
 }
