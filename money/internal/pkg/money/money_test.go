@@ -54,3 +54,13 @@ func TestFranc(t *testing.T) {
 	assert.Equal(t, f.GetAmount(), 1)
 	assert.Equal(t, f.Currency(), "CHF")
 }
+
+// TestSimpleAddition
+func TestSimpleAddition(t *testing.T) {
+	five := Dollar(5)
+	var sum Expression
+	sum = five.Plus(Dollar(5))
+	bank := NewBank()
+	reduced := bank.reduce(sum, "USD")
+	assert.Equal(t, Dollar(10), reduced)
+}
