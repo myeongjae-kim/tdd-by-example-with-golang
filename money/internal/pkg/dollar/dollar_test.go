@@ -9,10 +9,8 @@ import (
 // TestMultiplication is a test to test multiplcation.
 func TestMultiplication(t *testing.T) {
 	five := Dollar{5}
-	product := five.times(2)
-	assert.Equal(t, product.amount, 10)
-	product = five.times(3)
-	assert.Equal(t, product.amount, 15)
+	assert.Equal(t, five.times(2), Dollar{10})
+	assert.Equal(t, five.times(3), Dollar{15})
 }
 
 // TestEquality tests the comparison of Dollar objects
