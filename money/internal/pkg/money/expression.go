@@ -4,4 +4,5 @@ package money
 type Expression interface {
 	reduce(b Bank, to string) Money
 	Plus(addend Expression) Expression
+	Times(multiplier int) Expression
 }

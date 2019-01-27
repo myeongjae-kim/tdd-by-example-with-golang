@@ -18,5 +18,10 @@ func (s Sum) reduce(bank Bank, to string) Money {
 
 // Plus :)
 func (s Sum) Plus(addend Expression) Expression {
-	return Money{}
+	return NewSum(s, addend)
+}
+
+// Times :)
+func (s Sum) Times(multiplier int) Expression {
+	return NewSum(s.augend.Times(multiplier), s.addend.Times(multiplier))
 }
