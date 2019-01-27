@@ -1,4 +1,4 @@
-package dollar
+package money
 
 import (
 	"math/rand"
@@ -16,8 +16,8 @@ func TestNewDollar(t *testing.T) {
 	assert.Equal(t, d.GetAmount(), amount)
 }
 
-// TestMultiplication tests multiplcation.
-func TestMultiplication(t *testing.T) {
+// TestDollarMultiplication tests multiplcation.
+func TestDollarMultiplication(t *testing.T) {
 	five := NewDollar(5)
 	assert.Equal(t, five.times(2), NewDollar(10))
 	assert.Equal(t, five.times(3), NewDollar(15))

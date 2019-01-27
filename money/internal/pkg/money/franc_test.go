@@ -1,4 +1,4 @@
-package franc
+package money
 
 import (
 	"math/rand"
@@ -16,8 +16,8 @@ func TestNewFranc(t *testing.T) {
 	assert.Equal(t, d.GetAmount(), amount)
 }
 
-// TestMultiplication is a test to test multiplcation.
-func TestMultiplication(t *testing.T) {
+// TestFrancMultiplication is a test to test multiplcation.
+func TestFrancMultiplication(t *testing.T) {
 	five := NewFranc(5)
 	assert.Equal(t, five.times(2), NewFranc(10))
 	assert.Equal(t, five.times(3), NewFranc(15))
