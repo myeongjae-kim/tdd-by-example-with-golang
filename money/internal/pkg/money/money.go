@@ -41,6 +41,7 @@ func (m Money) Plus(addend Money) Expression {
 	return NewSum(m, addend)
 }
 
-func (m Money) reduce(to string) Money {
-	return m
+func (m Money) reduce(bank Bank, to string) Money {
+	rate := bank.rate(m.currency, to)
+	return newMoney(m.amount/rate, to)
 }

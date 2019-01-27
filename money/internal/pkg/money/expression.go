@@ -2,5 +2,5 @@ package money
 
 // Expression of different currencies
 type Expression interface {
-	reduce(to string) Money
+	reduce(b Bank, to string) Money
 }
