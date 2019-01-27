@@ -5,11 +5,11 @@ type franc struct {
 	Money
 }
 
-func (f *franc) times(multiplier int) franc {
+func (f franc) times(multiplier int) franc {
 	return NewFranc(f.GetAmount() * multiplier)
 }
 
 // NewFranc is a constructor of Franc package.
 func NewFranc(amount int) franc {
-	return franc{NewMoney(amount)}
+	return franc{NewMoney(amount, "CHF")}
 }
