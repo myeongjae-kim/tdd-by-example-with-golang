@@ -1,4 +1,6 @@
 package money
 
 // Expression of different currencies
-type Expression interface{}
+type Expression interface {
+	reduce(to string) Money
+}

@@ -38,5 +38,9 @@ func (m Money) Times(multiplier int) Money {
 
 // Plus :)
 func (m Money) Plus(addend Money) Expression {
-	return newMoney(m.amount+addend.amount, m.currency)
+	return NewSum(m, addend)
+}
+
+func (m Money) reduce(to string) Money {
+	return m
 }
