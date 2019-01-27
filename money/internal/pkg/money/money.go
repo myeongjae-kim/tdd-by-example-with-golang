@@ -11,6 +11,16 @@ func newMoney(amount int, currency string) Money {
 	return Money{amount, currency}
 }
 
+// Dollar :)
+func Dollar(amount int) Money {
+	return newMoney(amount, "USD")
+}
+
+// Franc :)
+func Franc(amount int) Money {
+	return newMoney(amount, "CHF")
+}
+
 // GetAmount returns amount of Money.
 func (m Money) GetAmount() int {
 	return m.amount
@@ -23,15 +33,10 @@ func (m Money) Currency() string {
 
 // Times :)
 func (m Money) Times(multiplier int) Money {
-	return newMoney(m.GetAmount()*multiplier, m.Currency())
+	return newMoney(m.amount*multiplier, m.currency)
 }
 
-// Dollar :)
-func Dollar(amount int) Money {
-	return newMoney(amount, "USD")
-}
-
-// Franc :)
-func Franc(amount int) Money {
-	return newMoney(amount, "CHF")
+// Plus :)
+func (m Money) Plus(addend Money) Expression {
+	return newMoney(m.amount+addend.amount, m.currency)
 }
